@@ -1,0 +1,102 @@
+SELECT DATABASE();
+
+INSERT INTO cats (name, age)
+VALUES ('Other', 8); 
+
+
+SELECT *
+FROM cats;
+
+INSERT INTO CATS (age, name) 
+values (2, "Beth");
+
+
+
+-- INSERTING MULTIPLE VALUES AT ONCE
+-- INSERT INTO CATS (name, age)
+-- VALUES ('METABALL', 2), ("POTATO FACE", 5), ("Turkey", 4), ("Risky", 9);
+
+INSERT INTO CATS
+VALUES ('METABALL', 2), ("POTATO FACE", 5), ("Turkey", 4), ("Risky", 9);
+
+
+
+-- NOT NULL 
+CREATE TABLE cats2 (
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+
+-- DEFAULT
+CREATE TABLE cats3 (NAME VARCHAR(50) NOT NULL DEFAULT 'KYLIE', AGE INT NOT NULL DEFAULT 45);
+
+SHOW TABLES;
+
+INSERT INTO CATS3 () VALUES();
+
+SELECT * FROM CATS3;
+
+-- DEFAULT WITHOUT NOT NULL, THEN WE CAN SET VALUE TO NULL. (DEFAULT DOES NOT MEAN NOT NULL).
+
+
+
+
+
+-- PRIMARY KEY
+
+-- CREATE TABLE unique_cats (
+-- 	cat_id INT PRIMARY KEY,
+--     name VARCHAR(100) NOT NULL,
+--     age INT NOT NULL
+-- );
+
+
+CREATE TABLE unique_cats (
+	CAT_ID INT,
+	NAME VARCHAR(50) NOT NULL DEFAULT 'UNNAMED',
+    AGE INT NOT NULL DEFAULT -1,
+    PRIMARY KEY (CAT_ID)
+);    
+
+DESC unique_cats;
+
+
+-- AUTO INCREMENT
+CREATE TABLE unique_cats2 (
+	CAT_ID INT AUTO_INCREMENT,
+	NAME VARCHAR(50) NOT NULL DEFAULT 'UNNAMED',
+	AGE INT NOT NULL DEFAULT 0,
+	PRIMARY KEY (CAT_ID)
+);
+
+
+
+INSERT INTO unique_cats2 (NAME, AGE) VALUES ('BLUE', 6);
+SELECT * FROM unique_cats2;
+
+
+-- EXERCISE
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255),
+    age INT NOT NULL,
+    current_status VARCHAR(255) NOT NULL DEFAULT 'employed',
+    PRIMARY KEY(id)
+);
+
+INSERT INTO employees(first_name, last_name, age) VALUES
+('Dora', 'Smith', 58);
+
+SELECT * FROM employees;
+
+
+
+
+
+
+
+
+
